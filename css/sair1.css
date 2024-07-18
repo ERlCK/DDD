@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4e5a8;
+}
+
+.text-area {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+/* Definições pra imagem OU*/
+.image-grid img:hover:not(.no-hover) {
+    transform: scale(1.05);
+}
+
+.image-grid .no-hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: 250px auto 0; 
+}
+
+/* Estilos para telas menores que 768px de largura (dispositivos móveis) */
+@media (max-width: 768px) {
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas com largura igual */
+        gap: 10px;
+        padding: 10px;
+    }
+}
+
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999; /* Certifica-se de que o botão esteja acima de outros elementos */
+}
+
+.back-button img {
+    width: 350px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.back-button:hover img {
+    transform: scale(1.1);
+}
+
+.pokemon-info {
+    display: flex;
+    flex-direction: column; /* Alinha o texto abaixo da imagem */
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 70px; /* Espaço para o botão de voltar */
+}
+
+.pokemon-info img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.pokemon-info img:hover {
+    transform: scale(1.1);
+}
+
+.pokemon-info p {
+    font-size: 18px;
+    text-align: center; /* Centraliza o texto */
+}
